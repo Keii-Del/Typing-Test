@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   getRandomSentence,
   calculateWpm,
@@ -22,8 +22,29 @@ function TypingText() {
   const [totalTyped, setTotalTyped] = useState(0);
   const [totalCorrect, setTotalCorrect] = useState(0);
 
+  function fetchNewSentence() {
+    fetch(
+      "https://raw.githubusercontent.com/dariusk/corpora/master/data/words/common.json",
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const allWords = data.commonWords;
+        const randomWords = [];
+        for (let i = 0; i < 10; i++) {
+          const randomIndex = Math.floor(Math.random() * allWords.length);
+          randomWords.push(allWords[randomIndex]);
+        }
+        const sentence = randomWords.join(" ");
+        setTargetText(sentence);
+      });
+  }
+
+  useEffect(() => {
+    fetchNewSentence();
+  }, []);
+
   function restart() {
-    setTargetText(getRandomSentence(sentences));
+    fetchNewSentence();
     setTypedText("");
     setStartTime(null);
     setWpm(null);
@@ -40,7 +61,11 @@ function TypingText() {
         setTimeout(() => inputRef.current.focus(), 0);
       }}
     >
-      <CharacterDisplay characters={characters} typedText={typedText} />
+      {targetText === "" ? (
+        <p>Loading...</p>
+      ) : (
+        <CharacterDisplay characters={characters} typedText={typedText} />
+      )}
       <input
         ref={inputRef}
         onChange={(e) => {
@@ -69,10 +94,17 @@ function TypingText() {
 
           if (value.length === targetText.length) {
             const endTime = Date.now();
-            const calculatedWpm = calculateWpm(value.length, startTime, endTime);
+            const calculatedWpm = calculateWpm(
+              value.length,
+              startTime,
+              endTime,
+            );
             setWpm(calculatedWpm);
 
-            const calculatedAccuracy = calculateAccuracy(newTotalCorrect, newTotalTyped);
+            const calculatedAccuracy = calculateAccuracy(
+              newTotalCorrect,
+              newTotalTyped,
+            );
             setAccuracy(calculatedAccuracy);
           }
 
