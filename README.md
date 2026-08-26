@@ -1,16 +1,43 @@
-# React + Vite
+# Typing Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is just another project for me to learn JavaScript, especially React.
 
-Currently, two official plugins are available:
+This is a [MonkeyType](https://monkeytype.com/) inspired project. I used that website as my reference.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Live character-by-character feedback (correct/incorrect coloring) as you type
+- Random word generation, pulled from Monkeytype's own English word list
+- WPM (words per minute) calculation
+- Accuracy tracking, based on every keystroke — including mistakes you fix
+- Restart with a button or by pressing Tab
+- Responsive, word-aware text wrapping (no mid-word line breaks)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built With
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+1. Clone the repo
+   \`\`\`
+   git clone https://github.com/Keii-Del/Typing-Test.git
+   \`\`\`
+2. Install dependencies
+   \`\`\`
+   npm install
+   \`\`\`
+3. Run the dev server
+   \`\`\`
+   npm run dev
+   \`\`\`
+
+## What I Learned
+
+- React state and hooks (\`useState\`, \`useEffect\`, \`useRef\`)
+- Controlled inputs and capturing live keystrokes
+- Fetching data from an API and handling async logic
+- Breaking a component into smaller, reusable pieces
+- Debugging real-world React quirks (stale state, focus handling, flexbox wrapping)
