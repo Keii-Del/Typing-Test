@@ -17,7 +17,7 @@ function CharacterDisplay({ characters, typedText }) {
   let globalIndex = 0;
 
   return (
-    <div className="max-w-3xl flex flex-wrap">
+    <div className="max-w-3xl flex flex-wrap leading-relaxed">
       {words.map((word, wordIndex) => {
         const isLastWord = wordIndex === words.length - 1;
 

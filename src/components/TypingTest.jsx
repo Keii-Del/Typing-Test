@@ -24,11 +24,11 @@ function TypingText() {
 
   function fetchNewSentence() {
     fetch(
-      "https://raw.githubusercontent.com/dariusk/corpora/master/data/words/common.json",
+      "https://raw.githubusercontent.com/monkeytypegame/monkeytype/master/frontend/static/languages/english.json",
     )
       .then((response) => response.json())
       .then((data) => {
-        const allWords = data.commonWords;
+        const allWords = data.words;
         const randomWords = [];
         for (let i = 0; i < 10; i++) {
           const randomIndex = Math.floor(Math.random() * allWords.length);
@@ -56,11 +56,15 @@ function TypingText() {
 
   return (
     <div
-      className="font-mono text-2xl tracking-wide relative min-h-screen p-8 bg-neutral-900 text-white flex flex-col items-center justify-center"
+      className="text-2xl tracking-wide relative min-h-screen p-8 bg-neutral-900 text-white flex flex-col items-center justify-center"
+      style={{ fontFamily: "'JetBrains Mono', monospace" }}
       onClick={() => {
         setTimeout(() => inputRef.current.focus(), 0);
       }}
     >
+      <h1 className="text-neutral-500 text-sm uppercase tracking-widest mb-8">
+        Typing Test
+      </h1>
       {targetText === "" ? (
         <p>Loading...</p>
       ) : (
