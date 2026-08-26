@@ -11,7 +11,7 @@ This is a [MonkeyType](https://monkeytype.com/) inspired project. I used that we
 - WPM (words per minute) calculation
 - Accuracy tracking, based on every keystroke — including mistakes you fix
 - Restart with a button or by pressing Tab
-- Responsive, word-aware text wrapping (no mid-word line breaks)
+- Word-aware text wrapping (no mid-word line breaks)
 
 ## Built With
 
@@ -22,21 +22,23 @@ This is a [MonkeyType](https://monkeytype.com/) inspired project. I used that we
 ## Getting Started
 
 1. Clone the repo
-   \`\`\`
-   git clone https://github.com/Keii-Del/Typing-Test.git
-   \`\`\`
+
+git clone https://github.com/Keii-Del/Typing-Test.git
+
+
 2. Install dependencies
-   \`\`\`
-   npm install
-   \`\`\`
+
+npm install
+
+
 3. Run the dev server
-   \`\`\`
-   npm run dev
-   \`\`\`
+
+npm run dev
+
 
 ## What I Learned
 
-- React state and hooks (\`useState\`, \`useEffect\`, \`useRef\`)
+- React state and hooks (useState, useEffect, useRef)
 - Controlled inputs and capturing live keystrokes
 - Fetching data from an API and handling async logic
 - Breaking a component into smaller, reusable pieces
