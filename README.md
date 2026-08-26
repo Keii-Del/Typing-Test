@@ -25,16 +25,13 @@ This is a [MonkeyType](https://monkeytype.com/) inspired project. I used that we
 
 git clone https://github.com/Keii-Del/Typing-Test.git
 
-
 2. Install dependencies
 
 npm install
 
-
 3. Run the dev server
 
 npm run dev
-
 
 ## What I Learned
 
